@@ -1,11 +1,7 @@
 Rails.application.routes.draw do
+  ActiveAdmin.routes(self)
   root 'products#index'
 
   devise_for :users
 
-  namespace :admin do
-    root 'products#index'
-    resources :products
-    resources :categories
-  end
 end
